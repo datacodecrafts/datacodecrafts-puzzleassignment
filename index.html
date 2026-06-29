@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Picture Puzzle Assignment</title>
+<style>
+
+body {
+  font-family: Verdana, Arial, sans-serif;
+  background-color: #faf3e0;
+  color: #2e2a22;
+  margin: 0;
+  padding: 20px;
+  font-size: 15px;
+}
+
+.page-title {
+  text-align: center;
+  color: #3f7d4e;
+  font-size: 1.4rem;
+  margin: 0 0 18px 0;
+}
+
+/* ============================================
+   PART 1 - CSS GRID PAGE LAYOUT
+   Two sections: header, puzzle
+   ============================================ */
+.page-grid {
+  display: grid;
+  grid-template-areas:
+    "header"
+    "puzzle";
+  gap: 18px;
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.grid-area-header { grid-area: header; }
+.grid-area-puzzle { grid-area: puzzle; }
+
+.grid-area-header {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 16px;
+  background: #ffffff;
+  border: 1px solid #cfc7ad;
+  border-top: 5px solid #3f7d4e;
+  padding: 18px 20px;
+}
+
+@media (max-width: 560px) {
+  .grid-area-header {
+    grid-template-columns: 1fr;
+  }
+}
+
+.grid-area-header h1 {
+  font-size: 1.3rem;
+  margin: 0 0 8px 0;
+  color: #5a3825;
+}
+
+.grid-area-header h2 {
+  font-size: 1.1rem;
+  margin: 0 0 6px 0;
+  color: #b5651d;
+}
+
+.label {
+  font-weight: bold;
+  font-size: 0.8rem;
+  color: #3f7d4e;
+  margin: 0 0 2px 0;
+  letter-spacing: 0.03em;
+}
+
+.bio {
+  margin: 6px 0 0 0;
+  line-height: 1.4;
+}
+
+.puzzle-title {
+  border-left: 2px solid #e6dcb8;
+  padding-left: 16px;
+}
+
+@media (max-width: 560px) {
+  .puzzle-title {
+    border-left: none;
+    border-top: 2px solid #e6dcb8;
+    padding-left: 0;
+    padding-top: 12px;
+  }
+}
+
+.grid-area-puzzle {
+  background: #ffffff;
+  border: 1px solid #cfc7ad;
+  border-top: 5px solid #b5651d;
+  padding: 18px 20px;
+  text-align: center;
+}
+
+.grid-area-puzzle h2 {
+  font-size: 1.1rem;
+  margin-top: 0;
+  color: #b5651d;
+}
+
+/* ============================================
+   PART 2 - FLEXBOX PUZZLE ASSEMBLY
+   16 pieces, 4 per row, no gaps so they line up
+   ============================================ */
+.puzzle-frame {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 480px;
+  margin: 10px auto 0 auto;
+  border: 8px solid #7b4a2d;
+}
+
+.piece {
+  flex: 0 0 25%;
+  width: 25%;
+  display: block;
+  margin: 0;
+}
+
+/* extra piece that doesn't belong - kept in HTML, hidden from view */
+.fake-piece {
+  display: none;
+}
+
+</style>
+</head>
+<body>
+
+<h1 class="page-title">Flexbox &amp; Grid Picture Puzzle</h1>
+<main class="page-grid">
+
+  <header class="grid-area-header">
+    <div class="about-me">
+      <p class="label">ABOUT ME</p>
+      <h1>Efaf</h1>
+      <p class="bio">
+        I'm a student learning web design and this is my koala puzzle.
+      </p>
+    </div>
+    <div class="puzzle-title">
+      <p class="label">PUZZLE</p>
+      <h2>Koala Climbing a Tree</h2>
+    </div>
+  </header>
+
+  <section class="grid-area-puzzle">
+    <h2>My Assembled Puzzle</h2>
+    <div class="puzzle-frame">
+      <img class="piece" src="images/piece1.jpg" alt="Puzzle piece 1">
+      <img class="piece" src="images/piece2.jpg" alt="Puzzle piece 2">
+      <img class="piece" src="images/piece3.jpg" alt="Puzzle piece 3">
+      <img class="piece" src="images/piece4.jpg" alt="Puzzle piece 4">
+      <img class="piece" src="images/piece5.jpg" alt="Puzzle piece 5">
+      <img class="piece" src="images/piece6.jpg" alt="Puzzle piece 6">
+      <img class="piece" src="images/piece7.jpg" alt="Puzzle piece 7">
+      <img class="piece" src="images/piece8.jpg" alt="Puzzle piece 8">
+      <img class="piece" src="images/piece9.jpg" alt="Puzzle piece 9">
+      <img class="piece" src="images/piece10.jpg" alt="Puzzle piece 10">
+      <img class="piece" src="images/piece11.jpg" alt="Puzzle piece 11">
+      <img class="piece" src="images/piece12.jpg" alt="Puzzle piece 12">
+      <img class="piece" src="images/piece13.jpg" alt="Puzzle piece 13">
+      <img class="piece" src="images/piece14.jpg" alt="Puzzle piece 14">
+      <img class="piece" src="images/piece15.jpg" alt="Puzzle piece 15">
+      <img class="piece" src="images/piece16.jpg" alt="Puzzle piece 16">
+      <img class="piece fake-piece" src="images/fakepiece.jpg" alt="Extra piece that does not belong">
+    </div>
+  </section>
+
+</main>
+
+</body>
+</html>
